@@ -1,0 +1,15 @@
+- title: Home
+  url: 
+- title: Posts
+  url: /posts
+- title: Category
+  url: /category
+  sublinks:
+    - title: Real Estate
+      url: /real-estate
+    - title: Data Science
+      url: /data-science
+- title: About
+  url: /about
+# - title: Contact
+#   url: /contact
