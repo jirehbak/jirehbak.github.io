@@ -1,71 +1,50 @@
----
-layout: post
-<<<<<<< HEAD
-title: "[시각화] plotly 라이브러리로 깃허브 블로그에 반응형 그래프 넣기 "
-subtitle: "Labelling Lines with Annotations 예시"
-=======
-title: "[시각화] plotly 라이브러리로 깃헙 블로그에 반응형 그래프 넣기 "
-subtitle: "example"
->>>>>>> 72a562a664de288a7cc3d567f45fedb52eb9866f
-date: 2020-09-05 11:11:13 -0400
-background: '/img/posts/01.jpg'
-datatable: true
-comments: true
-category : Data Science
----
-
-<html>
+I"R'<html>
 <head>
   <!-- Plotly.js -->
   <script src="https://cdn.plot.ly/plotly-1.2.0.min.js"></script>
 
   <!-- highlight.js-->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/vs2015.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/vs2015.min.css" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script>
   <script>hljs.initHighlightingOnLoad();</script>
 </head>
 
 <body>
-<h1>
-  목표<br/>
-</h1>
+<h3>
+  목표<br />
+</h3>
 
 <p>
     javascript 시각화 오픈소스 중 하나인 plotly를 이용해서, 반응형 그래프를 넣어보자
 </p>
 
 <h3>
-  1. plotly.js CDN 임포트<br/>
+  1. plotly.js CDN 임포트<br />
 </h3>
-<p>
-    - header 에 아래 코드를 입력하여, CDN을 가져온다.<br/>
-    - plotly-1.2.0 와 같이 특정버전을 지정할 수도 있고, plotly-latest로 하면 최신버전을 가져오게 할수도 있다.<br/><br/>
-</p>
+    - header 에 아래 코드를 입력하여, CDN을 가져온다.<br />
+    - plotly-1.2.0 와 같이 특정버전을 지정할 수도 있고, plotly-latest로 하면 최신버전을 가져오게 할수도 있다.<br /><br />
+
 <pre><code class="html">
   &lt;header&gt;
-    &lt;script&gt;script src="https://cdn.plot.ly/plotly-1.2.0.min.js">&lt;/script&gt;
+    &lt;script&gt;script src="https://cdn.plot.ly/plotly-1.2.0.min.js"&gt;&lt;/script&gt;
   &lt;/header&gt;
 
 </code></pre>
-<br/><br/>
 
 <h3>
-  2. 그래프가 들어갈 div 생성<br/>
+  2. 그래프가 들어갈 div 생성<br />
 </h3>
-<p>
-    - 그래프의 사이즈에 맞게, width와 height값을 조정<br/><br/>
-</p>
+    - 그래프의 사이즈에 맞게, width와 height값을 조정<br /><br />
 <pre><code class="html">
   &lt;div id="tester" style="width:100%;height:800px;"&gt;&lt;/div&gt;
 
 </code></pre>
-<br/><br/>
 
 <h3>
-  3. div에 들어갈 그래프 넣기<br/>
+  3. div에 들어갈 그래프 넣기<br />
 </h3>
 <p>
-  - <a href="https://plotly.com/javascript/line-charts/#labelling-lines-with-annotations">labelling-lines-with-annotations</a>의 샘플 코드를 활용<br/><br/>
+  - <a href="https://plotly.com/javascript/line-charts/#labelling-lines-with-annotations">labelling-lines-with-annotations</a>의 샘플 코드를 활용<br /><br />
 </p>
 <pre><code class="html">
   &lt;script&gt;
@@ -93,7 +72,7 @@ category : Data Science
 
     var data = [];
 
-    for ( var i = 0 ; i < xData.length ; i++ ) {
+    for ( var i = 0 ; i &lt; xData.length ; i++ ) {
       var result = {
         x: xData[i],
         y: yData[i],
@@ -174,7 +153,7 @@ category : Data Science
           y: -0.1,
           xanchor: 'center',
           yanchor: 'top',
-          text: 'Source: Pew Research Center & Storytelling with data',
+          text: 'Source: Pew Research Center &amp; Storytelling with data',
           showarrow: false,
           font: {
             family: 'Arial',
@@ -185,7 +164,7 @@ category : Data Science
       ]
     };
 
-    for( var i = 0 ; i < xData.length ; i++ ) {
+    for( var i = 0 ; i &lt; xData.length ; i++ ) {
       var result = {
         xref: 'paper',
         x: 0.05,
@@ -221,13 +200,19 @@ category : Data Science
     Plotly.newPlot('tester', data, layout);
   &lt;/script&gt;
 </code></pre>
-<br/>
 
 <p>
-  그러고나면, 아래와 같은 반응형 그래프가 그려지는 것을 확인할 수 있다.<br/><br/>
+  - 그러면, 아래와 같은 반응형 그래프가 그려지는 것을 확인할 수 있다.<br /><br />
 </p>
 
-<div id="tester" style="width:100%;height:600px;"></div>
+
+
+<!-- Plots go in blank <div> elements. 
+    You can size them in the plot layout,
+    or give the div a size as shown here.
+-->
+<div id="tester" style="width:100%;height:800px;"></div>
+
 
 <script>
   var xData = [
@@ -381,23 +366,19 @@ category : Data Science
   
   Plotly.newPlot('tester', data, layout);
 </script>
-<br/><br/>
 
 <h3>
-  참고자료<br/>
+  Plotly 공식 문서<br />
 </h3>
 <p>
-  - <a href="https://bit.ly/1Or9igj">plotly.js 공식문서</a><br/>
-  - <a href="https://plotly.com/javascript/getting-started">plotly.js 시작하기</a><br/>
+  - <a href="https://bit.ly/1Or9igj">(plotly.js 공식문서 보기)</a><br />
+  - <a href="https://plotly.com/javascript/getting-started">plotly.js getting-started</a><br />
 </p>
-<br/><br/>
+
+&lt;/p&gt;
 
 </body>
 </html>
-
-
-
-{% if page.comments %} 
 
 <div id="disqus_thread"></div>
 <script>
@@ -418,6 +399,7 @@ s.setAttribute('data-timestamp', +new Date());
 (d.head || d.body).appendChild(s);
 })();
 </script>
+
 <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-                            
-{% endif %}
+
+:ET
