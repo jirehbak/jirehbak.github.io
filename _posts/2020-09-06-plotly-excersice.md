@@ -1,12 +1,7 @@
 ---
 layout: post
-<<<<<<< HEAD
 title: "[시각화] plotly 라이브러리로 깃허브 블로그에 반응형 그래프 넣기 "
 subtitle: "Labelling Lines with Annotations 예시"
-=======
-title: "[시각화] plotly 라이브러리로 깃헙 블로그에 반응형 그래프 넣기 "
-subtitle: "example"
->>>>>>> 72a562a664de288a7cc3d567f45fedb52eb9866f
 date: 2020-09-05 11:11:13 -0400
 background: '/img/posts/01.jpg'
 datatable: true
