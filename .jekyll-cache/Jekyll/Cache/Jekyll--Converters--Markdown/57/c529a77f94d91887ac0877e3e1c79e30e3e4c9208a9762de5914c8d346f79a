@@ -1,0 +1,648 @@
+I"$1<h3>
+  개요<br />
+</h3>
+
+<ul>
+  <li>기간: 2016년 ~ 2020년</li>
+  <li>지역: 서울, 경기, 인천</li>
+  <li>데이터: 국토부 부동산 실거래가(아파트 매매) 데이터</li>
+</ul>
+
+<html>
+<head>
+  <!-- Plotly.js -->
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  <!-- jquery -->
+  <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+</head>
+
+<body>
+<h3>
+  <br />수도권 아파트 매매가 변동률 지도<br />
+</h3>
+  <div id="myDiv" style="width:100%;height:600px;"></div>
+  
+<script type="text/javascript">
+
+var price = [];
+var price_ch = [];
+var goo = [];
+
+
+  price.push( 28500 );
+  price_ch.push( 13 );
+  // goo.push( 수원시 장안구 );
+
+  price.push( 26500 );
+  price_ch.push( 10 );
+  // goo.push( 수원시 권선구 );
+
+  price.push( 31500 );
+  price_ch.push( 26 );
+  // goo.push( 수원시 팔달구 );
+
+  price.push( 31500 );
+  price_ch.push( 22 );
+  // goo.push( 수원시 영통구 );
+
+  price.push( 59500 );
+  price_ch.push( 88 );
+  // goo.push( 성남시 수정구 );
+
+  price.push( 47550 );
+  price_ch.push( 61 );
+  // goo.push( 성남시 중원구 );
+
+  price.push( 84500 );
+  price_ch.push( 68 );
+  // goo.push( 성남시 분당구 );
+
+  price.push( 24800 );
+  price_ch.push( 11 );
+  // goo.push( 의정부시 );
+
+  price.push( 37100 );
+  price_ch.push( 31 );
+  // goo.push( 안양시만안구 );
+
+  price.push( 45500 );
+  price_ch.push( 29 );
+  // goo.push( 안양시동안구 );
+
+  price.push( 35000 );
+  price_ch.push( 22 );
+  // goo.push( 부천시 );
+
+  price.push( 47000 );
+  price_ch.push( 48 );
+  // goo.push( 광명시 );
+
+  price.push( 24600 );
+  price_ch.push( 20 );
+  // goo.push( 평택시 );
+
+  price.push( 13700 );
+  price_ch.push( 6 );
+  // goo.push( 동두천시 );
+
+  price.push( 23800 );
+  price_ch.push( -3 );
+  // goo.push( 안산시상록구 );
+
+  price.push( 27850 );
+  price_ch.push( 0 );
+  // goo.push( 안산시단원구 );
+
+  price.push( 33300 );
+  price_ch.push( 16 );
+  // goo.push( 고양시덕양구 );
+
+  price.push( 36000 );
+  price_ch.push( 8 );
+  // goo.push( 고양시일산동구 );
+
+  price.push( 33650 );
+  price_ch.push( 12 );
+  // goo.push( 고양시일산서구 );
+
+  price.push( 131000 );
+  price_ch.push( 68 );
+  // goo.push( 과천시 );
+
+  price.push( 45000 );
+  price_ch.push( 47 );
+  // goo.push( 구리시 );
+
+  price.push( 28500 );
+  price_ch.push( 21 );
+  // goo.push( 남양주시 );
+
+  price.push( 23300 );
+  price_ch.push( 3 );
+  // goo.push( 오산시 );
+
+  price.push( 23500 );
+  price_ch.push( 9 );
+  // goo.push( 시흥시 );
+
+  price.push( 32000 );
+  price_ch.push( 14 );
+  // goo.push( 군포시 );
+
+  price.push( 37650 );
+  price_ch.push( 17 );
+  // goo.push( 의왕시 );
+
+  price.push( 67500 );
+  price_ch.push( 73 );
+  // goo.push( 하남시 );
+
+  price.push( 25200 );
+  price_ch.push( 36 );
+  // goo.push( 용인시처인구 );
+
+  price.push( 35000 );
+  price_ch.push( 9 );
+  // goo.push( 용인시기흥구 );
+
+  price.push( 53000 );
+  price_ch.push( 27 );
+  // goo.push( 용인시수지구 );
+
+  price.push( 28500 );
+  price_ch.push( 17 );
+  // goo.push( 파주시 );
+
+  price.push( 18500 );
+  price_ch.push( 3 );
+  // goo.push( 이천시 );
+
+  price.push( 11098 );
+  price_ch.push( -13 );
+  // goo.push( 안성시 );
+
+  price.push( 35300 );
+  price_ch.push( 34 );
+  // goo.push( 김포시 );
+
+  price.push( 30300 );
+  price_ch.push( 27 );
+  // goo.push( 화성시 );
+
+  price.push( 29000 );
+  price_ch.push( 12 );
+  // goo.push( 광주시 );
+
+  price.push( 18500 );
+  price_ch.push( 12 );
+  // goo.push( 양주시 );
+
+  price.push( 14800 );
+  price_ch.push( 10 );
+  // goo.push( 포천시 );
+
+  price.push( 14050 );
+  price_ch.push( -5 );
+  // goo.push( 여주시 );
+
+  price.push( 10000 );
+  price_ch.push( 2 );
+  // goo.push( 연천군 );
+
+  price.push( 19600 );
+  price_ch.push( 10 );
+  // goo.push( 가평군 );
+
+  price.push( 26250 );
+  price_ch.push( 20 );
+  // goo.push( 양평군 );
+
+  price.push( 69000 );
+  price_ch.push( 35 );
+  // goo.push( 종로구 );
+
+  price.push( 86000 );
+  price_ch.push( 63 );
+  // goo.push( 중구 );
+
+  price.push( 129500 );
+  price_ch.push( 77 );
+  // goo.push( 용산구 );
+
+  price.push( 96350 );
+  price_ch.push( 95 );
+  // goo.push( 성동구 );
+
+  price.push( 93500 );
+  price_ch.push( 71 );
+  // goo.push( 광진구 );
+
+  price.push( 63800 );
+  price_ch.push( 68 );
+  // goo.push( 동대문구 );
+
+  price.push( 48000 );
+  price_ch.push( 54 );
+  // goo.push( 중랑구 );
+
+  price.push( 63300 );
+  price_ch.push( 58 );
+  // goo.push( 성북구 );
+
+  price.push( 53000 );
+  price_ch.push( 54 );
+  // goo.push( 강북구 );
+
+  price.push( 39700 );
+  price_ch.push( 34 );
+  // goo.push( 도봉구 );
+
+  price.push( 44000 );
+  price_ch.push( 60 );
+  // goo.push( 노원구 );
+
+  price.push( 58000 );
+  price_ch.push( 53 );
+  // goo.push( 은평구 );
+
+  price.push( 67500 );
+  price_ch.push( 73 );
+  // goo.push( 서대문구 );
+
+  price.push( 89950 );
+  price_ch.push( 78 );
+  // goo.push( 마포구 );
+
+  price.push( 66350 );
+  price_ch.push( 59 );
+  // goo.push( 양천구 );
+
+  price.push( 61400 );
+  price_ch.push( 60 );
+  // goo.push( 강서구 );
+
+  price.push( 50000 );
+  price_ch.push( 50 );
+  // goo.push( 구로구 );
+
+  price.push( 42200 );
+  price_ch.push( 44 );
+  // goo.push( 금천구 );
+
+  price.push( 77000 );
+  price_ch.push( 84 );
+  // goo.push( 영등포구 );
+
+  price.push( 86000 );
+  price_ch.push( 66 );
+  // goo.push( 동작구 );
+
+  price.push( 62000 );
+  price_ch.push( 62 );
+  // goo.push( 관악구 );
+
+  price.push( 157500 );
+  price_ch.push( 56 );
+  // goo.push( 서초구 );
+
+  price.push( 170900 );
+  price_ch.push( 75 );
+  // goo.push( 강남구 );
+
+  price.push( 119800 );
+  price_ch.push( 73 );
+  // goo.push( 송파구 );
+
+  price.push( 73625 );
+  price_ch.push( 59 );
+  // goo.push( 강동구 );
+
+  price.push( 28100 );
+  price_ch.push( 8 );
+  // goo.push( 중구 );
+
+  price.push( 18300 );
+  price_ch.push( 2 );
+  // goo.push( 동구 );
+
+  price.push( 23000 );
+  price_ch.push( 21 );
+  // goo.push( 미추홀구 );
+
+  price.push( 32950 );
+  price_ch.push( 21 );
+  // goo.push( 연수구 );
+
+  price.push( 28700 );
+  price_ch.push( 25 );
+  // goo.push( 남동구 );
+
+  price.push( 26900 );
+  price_ch.push( 16 );
+  // goo.push( 부평구 );
+
+  price.push( 19800 );
+  price_ch.push( 6 );
+  // goo.push( 계양구 );
+
+  price.push( 27900 );
+  price_ch.push( 13 );
+  // goo.push( 서구 );
+
+  price.push( 16300 );
+  price_ch.push( -4 );
+  // goo.push( 강화군 );
+
+
+var trace = {
+ x : price,
+ y : price_ch,
+ mode : 'markers',
+ type : 'scatter',
+ name : 'apt_sales',
+//  text : goo,
+ marker: {size: 12}
+};
+
+var trace1 = {
+  x: [1, 2, 3, 4, 5],
+  y: [1, 6, 3, 6, 1],
+  mode: 'markers',
+  type: 'scatter',
+  name: 'Team A',
+  text: ['A-1', 'A-2', 'A-3', 'A-4', 'A-5'],
+  marker: { size: 12 }
+};
+
+var data = [ trace ];
+
+var layout = {
+  xaxis: {
+    range: [ 0.00, 100000 ]
+  },
+  yaxis: {
+    range: [-20, 100]
+  },
+  title:'Price vs. Price Change'
+};
+
+Plotly.newPlot('myDiv', data, layout);
+// var price = [];
+// var price_ch = [];
+
+// 
+//   price.push( 28500 );
+//   price_ch.push( 13 );
+// 
+//   price.push( 26500 );
+//   price_ch.push( 10 );
+// 
+//   price.push( 31500 );
+//   price_ch.push( 26 );
+// 
+//   price.push( 31500 );
+//   price_ch.push( 22 );
+// 
+//   price.push( 59500 );
+//   price_ch.push( 88 );
+// 
+//   price.push( 47550 );
+//   price_ch.push( 61 );
+// 
+//   price.push( 84500 );
+//   price_ch.push( 68 );
+// 
+//   price.push( 24800 );
+//   price_ch.push( 11 );
+// 
+//   price.push( 37100 );
+//   price_ch.push( 31 );
+// 
+//   price.push( 45500 );
+//   price_ch.push( 29 );
+// 
+//   price.push( 35000 );
+//   price_ch.push( 22 );
+// 
+//   price.push( 47000 );
+//   price_ch.push( 48 );
+// 
+//   price.push( 24600 );
+//   price_ch.push( 20 );
+// 
+//   price.push( 13700 );
+//   price_ch.push( 6 );
+// 
+//   price.push( 23800 );
+//   price_ch.push( -3 );
+// 
+//   price.push( 27850 );
+//   price_ch.push( 0 );
+// 
+//   price.push( 33300 );
+//   price_ch.push( 16 );
+// 
+//   price.push( 36000 );
+//   price_ch.push( 8 );
+// 
+//   price.push( 33650 );
+//   price_ch.push( 12 );
+// 
+//   price.push( 131000 );
+//   price_ch.push( 68 );
+// 
+//   price.push( 45000 );
+//   price_ch.push( 47 );
+// 
+//   price.push( 28500 );
+//   price_ch.push( 21 );
+// 
+//   price.push( 23300 );
+//   price_ch.push( 3 );
+// 
+//   price.push( 23500 );
+//   price_ch.push( 9 );
+// 
+//   price.push( 32000 );
+//   price_ch.push( 14 );
+// 
+//   price.push( 37650 );
+//   price_ch.push( 17 );
+// 
+//   price.push( 67500 );
+//   price_ch.push( 73 );
+// 
+//   price.push( 25200 );
+//   price_ch.push( 36 );
+// 
+//   price.push( 35000 );
+//   price_ch.push( 9 );
+// 
+//   price.push( 53000 );
+//   price_ch.push( 27 );
+// 
+//   price.push( 28500 );
+//   price_ch.push( 17 );
+// 
+//   price.push( 18500 );
+//   price_ch.push( 3 );
+// 
+//   price.push( 11098 );
+//   price_ch.push( -13 );
+// 
+//   price.push( 35300 );
+//   price_ch.push( 34 );
+// 
+//   price.push( 30300 );
+//   price_ch.push( 27 );
+// 
+//   price.push( 29000 );
+//   price_ch.push( 12 );
+// 
+//   price.push( 18500 );
+//   price_ch.push( 12 );
+// 
+//   price.push( 14800 );
+//   price_ch.push( 10 );
+// 
+//   price.push( 14050 );
+//   price_ch.push( -5 );
+// 
+//   price.push( 10000 );
+//   price_ch.push( 2 );
+// 
+//   price.push( 19600 );
+//   price_ch.push( 10 );
+// 
+//   price.push( 26250 );
+//   price_ch.push( 20 );
+// 
+//   price.push( 69000 );
+//   price_ch.push( 35 );
+// 
+//   price.push( 86000 );
+//   price_ch.push( 63 );
+// 
+//   price.push( 129500 );
+//   price_ch.push( 77 );
+// 
+//   price.push( 96350 );
+//   price_ch.push( 95 );
+// 
+//   price.push( 93500 );
+//   price_ch.push( 71 );
+// 
+//   price.push( 63800 );
+//   price_ch.push( 68 );
+// 
+//   price.push( 48000 );
+//   price_ch.push( 54 );
+// 
+//   price.push( 63300 );
+//   price_ch.push( 58 );
+// 
+//   price.push( 53000 );
+//   price_ch.push( 54 );
+// 
+//   price.push( 39700 );
+//   price_ch.push( 34 );
+// 
+//   price.push( 44000 );
+//   price_ch.push( 60 );
+// 
+//   price.push( 58000 );
+//   price_ch.push( 53 );
+// 
+//   price.push( 67500 );
+//   price_ch.push( 73 );
+// 
+//   price.push( 89950 );
+//   price_ch.push( 78 );
+// 
+//   price.push( 66350 );
+//   price_ch.push( 59 );
+// 
+//   price.push( 61400 );
+//   price_ch.push( 60 );
+// 
+//   price.push( 50000 );
+//   price_ch.push( 50 );
+// 
+//   price.push( 42200 );
+//   price_ch.push( 44 );
+// 
+//   price.push( 77000 );
+//   price_ch.push( 84 );
+// 
+//   price.push( 86000 );
+//   price_ch.push( 66 );
+// 
+//   price.push( 62000 );
+//   price_ch.push( 62 );
+// 
+//   price.push( 157500 );
+//   price_ch.push( 56 );
+// 
+//   price.push( 170900 );
+//   price_ch.push( 75 );
+// 
+//   price.push( 119800 );
+//   price_ch.push( 73 );
+// 
+//   price.push( 73625 );
+//   price_ch.push( 59 );
+// 
+//   price.push( 28100 );
+//   price_ch.push( 8 );
+// 
+//   price.push( 18300 );
+//   price_ch.push( 2 );
+// 
+//   price.push( 23000 );
+//   price_ch.push( 21 );
+// 
+//   price.push( 32950 );
+//   price_ch.push( 21 );
+// 
+//   price.push( 28700 );
+//   price_ch.push( 25 );
+// 
+//   price.push( 26900 );
+//   price_ch.push( 16 );
+// 
+//   price.push( 19800 );
+//   price_ch.push( 6 );
+// 
+//   price.push( 27900 );
+//   price_ch.push( 13 );
+// 
+//   price.push( 16300 );
+//   price_ch.push( -4 );
+// 
+
+// var trace = {
+//  x : price,
+//  y : price_ch,
+//  mode : 'markers',
+//  type : 'scatter'
+// };
+
+// var layout = {
+//   xaxis: {
+//     range: [ 0.00, 100000 ]
+//   },
+//   yaxis: {
+//     range: [-20, 100]
+//   },
+//   title:'Data Labels Hover'
+// };
+
+// Plotly.newPlot('myDiv', trace, layout);
+
+</script>
+</body>
+</html>
+
+<div id="disqus_thread"></div>
+<script>
+  
+  /**
+  *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+  *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+  /*
+  var disqus_config = function () {
+  this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+  this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+  };
+  */
+  (function() { // DON'T EDIT BELOW THIS LINE
+  var d = document, s = d.createElement('script');
+  s.src = 'https://jirehbak.disqus.com/embed.js';
+  s.setAttribute('data-timestamp', +new Date());
+  (d.head || d.body).appendChild(s);
+  })();
+  </script>
+
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+:ET

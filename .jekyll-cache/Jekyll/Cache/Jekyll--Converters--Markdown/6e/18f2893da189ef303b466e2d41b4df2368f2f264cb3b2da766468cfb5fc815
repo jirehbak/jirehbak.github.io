@@ -1,0 +1,339 @@
+I"2<h3>
+  개요<br />
+</h3>
+
+<ul>
+  <li>기간: 2016년 ~ 2020년</li>
+  <li>지역: 서울, 경기, 인천</li>
+  <li>데이터: 국토부 부동산 실거래가(아파트 매매) 데이터</li>
+</ul>
+
+<html>
+<head>
+  <!-- Plotly.js -->
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  <!-- jquery -->
+  <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+</head>
+
+<body>
+<h3>
+  <br />수도권 아파트 매매가 변동률 지도<br />
+</h3>
+  <div id="myDiv" style="width:100%;height:600px;"></div>
+  
+<script type="text/javascript">
+
+
+var trace1 = {
+  x: [1, 2, 3, 4, 5],
+  y: [1, 6, 3, 6, 1],
+  mode: 'markers',
+  type: 'scatter',
+  name: 'Team A',
+  text: ['A-1', 'A-2', 'A-3', 'A-4', 'A-5'],
+  marker: { size: 12 }
+};
+
+var trace2 = {
+  x: [1.5, 2.5, 3.5, 4.5, 5.5],
+  y: [4, 1, 7, 1, 4],
+  mode: 'markers',
+  type: 'scatter',
+  name: 'Team B',
+  text: ['B-a', 'B-b', 'B-c', 'B-d', 'B-e'],
+  marker: { size: 12 }
+};
+
+var data = [ trace1 ];
+
+var layout = {
+  xaxis: {
+    range: [ 0.75, 5.25 ]
+  },
+  yaxis: {
+    range: [0, 8]
+  },
+  title:'Data Labels Hover'
+};
+
+Plotly.newPlot('myDiv', data, layout);
+// var price = [];
+// var price_ch = [];
+
+// 
+//   price.push( 28500 );
+//   price_ch.push( 13 );
+// 
+//   price.push( 26500 );
+//   price_ch.push( 10 );
+// 
+//   price.push( 31500 );
+//   price_ch.push( 26 );
+// 
+//   price.push( 31500 );
+//   price_ch.push( 22 );
+// 
+//   price.push( 59500 );
+//   price_ch.push( 88 );
+// 
+//   price.push( 47550 );
+//   price_ch.push( 61 );
+// 
+//   price.push( 84500 );
+//   price_ch.push( 68 );
+// 
+//   price.push( 24800 );
+//   price_ch.push( 11 );
+// 
+//   price.push( 37100 );
+//   price_ch.push( 31 );
+// 
+//   price.push( 45500 );
+//   price_ch.push( 29 );
+// 
+//   price.push( 35000 );
+//   price_ch.push( 22 );
+// 
+//   price.push( 47000 );
+//   price_ch.push( 48 );
+// 
+//   price.push( 24600 );
+//   price_ch.push( 20 );
+// 
+//   price.push( 13700 );
+//   price_ch.push( 6 );
+// 
+//   price.push( 23800 );
+//   price_ch.push( -3 );
+// 
+//   price.push( 27850 );
+//   price_ch.push( 0 );
+// 
+//   price.push( 33300 );
+//   price_ch.push( 16 );
+// 
+//   price.push( 36000 );
+//   price_ch.push( 8 );
+// 
+//   price.push( 33650 );
+//   price_ch.push( 12 );
+// 
+//   price.push( 131000 );
+//   price_ch.push( 68 );
+// 
+//   price.push( 45000 );
+//   price_ch.push( 47 );
+// 
+//   price.push( 28500 );
+//   price_ch.push( 21 );
+// 
+//   price.push( 23300 );
+//   price_ch.push( 3 );
+// 
+//   price.push( 23500 );
+//   price_ch.push( 9 );
+// 
+//   price.push( 32000 );
+//   price_ch.push( 14 );
+// 
+//   price.push( 37650 );
+//   price_ch.push( 17 );
+// 
+//   price.push( 67500 );
+//   price_ch.push( 73 );
+// 
+//   price.push( 25200 );
+//   price_ch.push( 36 );
+// 
+//   price.push( 35000 );
+//   price_ch.push( 9 );
+// 
+//   price.push( 53000 );
+//   price_ch.push( 27 );
+// 
+//   price.push( 28500 );
+//   price_ch.push( 17 );
+// 
+//   price.push( 18500 );
+//   price_ch.push( 3 );
+// 
+//   price.push( 11098 );
+//   price_ch.push( -13 );
+// 
+//   price.push( 35300 );
+//   price_ch.push( 34 );
+// 
+//   price.push( 30300 );
+//   price_ch.push( 27 );
+// 
+//   price.push( 29000 );
+//   price_ch.push( 12 );
+// 
+//   price.push( 18500 );
+//   price_ch.push( 12 );
+// 
+//   price.push( 14800 );
+//   price_ch.push( 10 );
+// 
+//   price.push( 14050 );
+//   price_ch.push( -5 );
+// 
+//   price.push( 10000 );
+//   price_ch.push( 2 );
+// 
+//   price.push( 19600 );
+//   price_ch.push( 10 );
+// 
+//   price.push( 26250 );
+//   price_ch.push( 20 );
+// 
+//   price.push( 69000 );
+//   price_ch.push( 35 );
+// 
+//   price.push( 86000 );
+//   price_ch.push( 63 );
+// 
+//   price.push( 129500 );
+//   price_ch.push( 77 );
+// 
+//   price.push( 96350 );
+//   price_ch.push( 95 );
+// 
+//   price.push( 93500 );
+//   price_ch.push( 71 );
+// 
+//   price.push( 63800 );
+//   price_ch.push( 68 );
+// 
+//   price.push( 48000 );
+//   price_ch.push( 54 );
+// 
+//   price.push( 63300 );
+//   price_ch.push( 58 );
+// 
+//   price.push( 53000 );
+//   price_ch.push( 54 );
+// 
+//   price.push( 39700 );
+//   price_ch.push( 34 );
+// 
+//   price.push( 44000 );
+//   price_ch.push( 60 );
+// 
+//   price.push( 58000 );
+//   price_ch.push( 53 );
+// 
+//   price.push( 67500 );
+//   price_ch.push( 73 );
+// 
+//   price.push( 89950 );
+//   price_ch.push( 78 );
+// 
+//   price.push( 66350 );
+//   price_ch.push( 59 );
+// 
+//   price.push( 61400 );
+//   price_ch.push( 60 );
+// 
+//   price.push( 50000 );
+//   price_ch.push( 50 );
+// 
+//   price.push( 42200 );
+//   price_ch.push( 44 );
+// 
+//   price.push( 77000 );
+//   price_ch.push( 84 );
+// 
+//   price.push( 86000 );
+//   price_ch.push( 66 );
+// 
+//   price.push( 62000 );
+//   price_ch.push( 62 );
+// 
+//   price.push( 157500 );
+//   price_ch.push( 56 );
+// 
+//   price.push( 170900 );
+//   price_ch.push( 75 );
+// 
+//   price.push( 119800 );
+//   price_ch.push( 73 );
+// 
+//   price.push( 73625 );
+//   price_ch.push( 59 );
+// 
+//   price.push( 28100 );
+//   price_ch.push( 8 );
+// 
+//   price.push( 18300 );
+//   price_ch.push( 2 );
+// 
+//   price.push( 23000 );
+//   price_ch.push( 21 );
+// 
+//   price.push( 32950 );
+//   price_ch.push( 21 );
+// 
+//   price.push( 28700 );
+//   price_ch.push( 25 );
+// 
+//   price.push( 26900 );
+//   price_ch.push( 16 );
+// 
+//   price.push( 19800 );
+//   price_ch.push( 6 );
+// 
+//   price.push( 27900 );
+//   price_ch.push( 13 );
+// 
+//   price.push( 16300 );
+//   price_ch.push( -4 );
+// 
+
+// var trace = {
+//  x : price,
+//  y : price_ch,
+//  mode : 'markers',
+//  type : 'scatter'
+// };
+
+// var layout = {
+//   xaxis: {
+//     range: [ 0.00, 100000 ]
+//   },
+//   yaxis: {
+//     range: [-20, 100]
+//   },
+//   title:'Data Labels Hover'
+// };
+
+// Plotly.newPlot('myDiv', trace, layout);
+
+</script>
+</body>
+</html>
+
+<div id="disqus_thread"></div>
+<script>
+  
+  /**
+  *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+  *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+  /*
+  var disqus_config = function () {
+  this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+  this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+  };
+  */
+  (function() { // DON'T EDIT BELOW THIS LINE
+  var d = document, s = d.createElement('script');
+  s.src = 'https://jirehbak.disqus.com/embed.js';
+  s.setAttribute('data-timestamp', +new Date());
+  (d.head || d.body).appendChild(s);
+  })();
+  </script>
+
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+:ET

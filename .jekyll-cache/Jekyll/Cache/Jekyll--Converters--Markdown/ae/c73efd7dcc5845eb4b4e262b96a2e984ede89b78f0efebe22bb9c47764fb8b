@@ -1,0 +1,125 @@
+I"�
+<h3>
+  개요<br />
+</h3>
+
+<ul>
+  <li>기간: 2016년 ~ 2020년
+    <ul>
+      <li>매매가격: 2020년 상반기</li>
+      <li>가격변동률: 2016 ~ 2020년</li>
+    </ul>
+  </li>
+  <li>지역: 서울, 경기, 인천</li>
+  <li>데이터: 국토부 부동산 실거래가(아파트 매매) 데이터</li>
+</ul>
+
+<html>
+<head>
+  <!-- Plotly.js -->
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  <!-- jquery -->
+  <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+</head>
+
+<body>
+<h3>
+  <br />수도권 아파트 매매가 변동률 지도<br />
+</h3>
+  <div id="myDiv" style="width:100%;height:700px;"></div>
+  
+<script type="text/javascript">
+
+// var price_11 = [];
+// var price_ch_11 = [];
+// var goo_11 = [];
+
+// var price_28 = [];
+// var price_ch_28 = [];
+// var goo_28 = [];
+
+var price_41 = [];
+var price_ch_41 = [];
+var goo_41 = [];
+
+for (var city in site.data.metropolitan_apt_price_and_change) {  
+    price_41.push(  );
+    price_ch_41.push(  );
+    goo_41.push( '' );
+}
+
+
+// var trace_11 = {
+//  x : price_11,
+//  y : price_ch_11,
+//  mode : 'markers',
+//  type : 'scatter',
+//  name : '서울특별시',
+//  text: goo_11,
+//  marker: {size: 11}
+// };
+
+// var trace_28 = {
+//  x : price_28,
+//  y : price_ch_28,
+//  mode : 'markers',
+//  type : 'scatter',
+//  name : '인천광역시',
+//  text: goo_28,
+//  marker: {size: 11}
+// };
+
+var trace_41 = {
+ x : price_41,
+ y : price_ch_41,
+ mode : 'markers',
+ type : 'scatter',
+ name : '경기도',
+ text: goo_41,
+ marker: {size: 11}
+};
+
+var data = [ trace_41 ];
+
+var layout = {
+  xaxis: {
+    title: "매매가격\n(만원)",
+    range: [ -1000, 180000 ]
+  },
+  yaxis: {
+    title: "가격 변동률\n(%)",
+    range: [-30, 110]
+  },
+  title:'Price vs. Price Change'
+    
+};
+
+Plotly.newPlot('myDiv', data, layout);
+
+</script>
+</body>
+</html>
+
+<div id="disqus_thread"></div>
+<script>
+  
+  /**
+  *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+  *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+  /*
+  var disqus_config = function () {
+  this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+  this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+  };
+  */
+  (function() { // DON'T EDIT BELOW THIS LINE
+  var d = document, s = d.createElement('script');
+  s.src = 'https://jirehbak.disqus.com/embed.js';
+  s.setAttribute('data-timestamp', +new Date());
+  (d.head || d.body).appendChild(s);
+  })();
+  </script>
+
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+:ET

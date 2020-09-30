@@ -1,0 +1,500 @@
+I"J&<h3>
+  개요<br />
+</h3>
+
+<ul>
+  <li>기간: 2016년 ~ 2020년
+    <ul>
+      <li>매매가격: 2020년 상반기</li>
+      <li>가격변동률: 2016 ~ 2020년</li>
+    </ul>
+  </li>
+  <li>지역: 서울, 경기, 인천</li>
+  <li>데이터: 국토부 부동산 실거래가(아파트 매매) 데이터</li>
+</ul>
+
+<html>
+<head>
+  <!-- Plotly.js -->
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  <!-- jquery -->
+  <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+</head>
+
+<body>
+<h3>
+  <br />수도권 아파트 매매가 변동률 지도<br />
+</h3>
+  <div id="myDiv" style="width:100%;height:700px;"></div>
+  
+<script type="text/javascript">
+
+// var price_11 = [];
+// var price_ch_11 = [];
+// var goo_11 = [];
+
+// var price_28 = [];
+// var price_ch_28 = [];
+// var goo_28 = [];
+
+var price_41 = [];
+var price_ch_41 = [];
+var goo_41 = [];
+
+
+
+  
+    price_41.push( 28500 );
+    price_ch_41.push( 13 );
+    goo_41.push( '수원시 장안구' );
+
+  
+    price_41.push( 26500 );
+    price_ch_41.push( 10 );
+    goo_41.push( '수원시 권선구' );
+
+  
+    price_41.push( 31500 );
+    price_ch_41.push( 26 );
+    goo_41.push( '수원시 팔달구' );
+
+  
+    price_41.push( 31500 );
+    price_ch_41.push( 22 );
+    goo_41.push( '수원시 영통구' );
+
+  
+    price_41.push( 59500 );
+    price_ch_41.push( 88 );
+    goo_41.push( '성남시 수정구' );
+
+  
+    price_41.push( 47550 );
+    price_ch_41.push( 61 );
+    goo_41.push( '성남시 중원구' );
+
+  
+    price_41.push( 84500 );
+    price_ch_41.push( 68 );
+    goo_41.push( '성남시 분당구' );
+
+  
+    price_41.push( 24800 );
+    price_ch_41.push( 11 );
+    goo_41.push( '의정부시' );
+
+  
+    price_41.push( 37100 );
+    price_ch_41.push( 31 );
+    goo_41.push( '안양시만안구' );
+
+  
+    price_41.push( 45500 );
+    price_ch_41.push( 29 );
+    goo_41.push( '안양시동안구' );
+
+  
+    price_41.push( 35000 );
+    price_ch_41.push( 22 );
+    goo_41.push( '부천시' );
+
+  
+    price_41.push( 47000 );
+    price_ch_41.push( 48 );
+    goo_41.push( '광명시' );
+
+  
+    price_41.push( 24600 );
+    price_ch_41.push( 20 );
+    goo_41.push( '평택시' );
+
+  
+    price_41.push( 13700 );
+    price_ch_41.push( 6 );
+    goo_41.push( '동두천시' );
+
+  
+    price_41.push( 23800 );
+    price_ch_41.push( -3 );
+    goo_41.push( '안산시상록구' );
+
+  
+    price_41.push( 27850 );
+    price_ch_41.push( 0 );
+    goo_41.push( '안산시단원구' );
+
+  
+    price_41.push( 33300 );
+    price_ch_41.push( 16 );
+    goo_41.push( '고양시덕양구' );
+
+  
+    price_41.push( 36000 );
+    price_ch_41.push( 8 );
+    goo_41.push( '고양시일산동구' );
+
+  
+    price_41.push( 33650 );
+    price_ch_41.push( 12 );
+    goo_41.push( '고양시일산서구' );
+
+  
+    price_41.push( 131000 );
+    price_ch_41.push( 68 );
+    goo_41.push( '과천시' );
+
+  
+    price_41.push( 45000 );
+    price_ch_41.push( 47 );
+    goo_41.push( '구리시' );
+
+  
+    price_41.push( 28500 );
+    price_ch_41.push( 21 );
+    goo_41.push( '남양주시' );
+
+  
+    price_41.push( 23300 );
+    price_ch_41.push( 3 );
+    goo_41.push( '오산시' );
+
+  
+    price_41.push( 23500 );
+    price_ch_41.push( 9 );
+    goo_41.push( '시흥시' );
+
+  
+    price_41.push( 32000 );
+    price_ch_41.push( 14 );
+    goo_41.push( '군포시' );
+
+  
+    price_41.push( 37650 );
+    price_ch_41.push( 17 );
+    goo_41.push( '의왕시' );
+
+  
+    price_41.push( 67500 );
+    price_ch_41.push( 73 );
+    goo_41.push( '하남시' );
+
+  
+    price_41.push( 25200 );
+    price_ch_41.push( 36 );
+    goo_41.push( '용인시처인구' );
+
+  
+    price_41.push( 35000 );
+    price_ch_41.push( 9 );
+    goo_41.push( '용인시기흥구' );
+
+  
+    price_41.push( 53000 );
+    price_ch_41.push( 27 );
+    goo_41.push( '용인시수지구' );
+
+  
+    price_41.push( 28500 );
+    price_ch_41.push( 17 );
+    goo_41.push( '파주시' );
+
+  
+    price_41.push( 18500 );
+    price_ch_41.push( 3 );
+    goo_41.push( '이천시' );
+
+  
+    price_41.push( 11098 );
+    price_ch_41.push( -13 );
+    goo_41.push( '안성시' );
+
+  
+    price_41.push( 35300 );
+    price_ch_41.push( 34 );
+    goo_41.push( '김포시' );
+
+  
+    price_41.push( 30300 );
+    price_ch_41.push( 27 );
+    goo_41.push( '화성시' );
+
+  
+    price_41.push( 29000 );
+    price_ch_41.push( 12 );
+    goo_41.push( '광주시' );
+
+  
+    price_41.push( 18500 );
+    price_ch_41.push( 12 );
+    goo_41.push( '양주시' );
+
+  
+    price_41.push( 14800 );
+    price_ch_41.push( 10 );
+    goo_41.push( '포천시' );
+
+  
+    price_41.push( 14050 );
+    price_ch_41.push( -5 );
+    goo_41.push( '여주시' );
+
+  
+    price_41.push( 10000 );
+    price_ch_41.push( 2 );
+    goo_41.push( '연천군' );
+
+  
+    price_41.push( 19600 );
+    price_ch_41.push( 10 );
+    goo_41.push( '가평군' );
+
+  
+    price_41.push( 26250 );
+    price_ch_41.push( 20 );
+    goo_41.push( '양평군' );
+
+  
+    price_41.push( 69000 );
+    price_ch_41.push( 35 );
+    goo_41.push( '종로구' );
+
+  
+    price_41.push( 86000 );
+    price_ch_41.push( 63 );
+    goo_41.push( '중구' );
+
+  
+    price_41.push( 129500 );
+    price_ch_41.push( 77 );
+    goo_41.push( '용산구' );
+
+  
+    price_41.push( 96350 );
+    price_ch_41.push( 95 );
+    goo_41.push( '성동구' );
+
+  
+    price_41.push( 93500 );
+    price_ch_41.push( 71 );
+    goo_41.push( '광진구' );
+
+  
+    price_41.push( 63800 );
+    price_ch_41.push( 68 );
+    goo_41.push( '동대문구' );
+
+  
+    price_41.push( 48000 );
+    price_ch_41.push( 54 );
+    goo_41.push( '중랑구' );
+
+  
+    price_41.push( 63300 );
+    price_ch_41.push( 58 );
+    goo_41.push( '성북구' );
+
+  
+    price_41.push( 53000 );
+    price_ch_41.push( 54 );
+    goo_41.push( '강북구' );
+
+  
+    price_41.push( 39700 );
+    price_ch_41.push( 34 );
+    goo_41.push( '도봉구' );
+
+  
+    price_41.push( 44000 );
+    price_ch_41.push( 60 );
+    goo_41.push( '노원구' );
+
+  
+    price_41.push( 58000 );
+    price_ch_41.push( 53 );
+    goo_41.push( '은평구' );
+
+  
+    price_41.push( 67500 );
+    price_ch_41.push( 73 );
+    goo_41.push( '서대문구' );
+
+  
+    price_41.push( 89950 );
+    price_ch_41.push( 78 );
+    goo_41.push( '마포구' );
+
+  
+    price_41.push( 66350 );
+    price_ch_41.push( 59 );
+    goo_41.push( '양천구' );
+
+  
+    price_41.push( 61400 );
+    price_ch_41.push( 60 );
+    goo_41.push( '강서구' );
+
+  
+    price_41.push( 50000 );
+    price_ch_41.push( 50 );
+    goo_41.push( '구로구' );
+
+  
+    price_41.push( 42200 );
+    price_ch_41.push( 44 );
+    goo_41.push( '금천구' );
+
+  
+    price_41.push( 77000 );
+    price_ch_41.push( 84 );
+    goo_41.push( '영등포구' );
+
+  
+    price_41.push( 86000 );
+    price_ch_41.push( 66 );
+    goo_41.push( '동작구' );
+
+  
+    price_41.push( 62000 );
+    price_ch_41.push( 62 );
+    goo_41.push( '관악구' );
+
+  
+    price_41.push( 157500 );
+    price_ch_41.push( 56 );
+    goo_41.push( '서초구' );
+
+  
+    price_41.push( 170900 );
+    price_ch_41.push( 75 );
+    goo_41.push( '강남구' );
+
+  
+    price_41.push( 119800 );
+    price_ch_41.push( 73 );
+    goo_41.push( '송파구' );
+
+  
+    price_41.push( 73625 );
+    price_ch_41.push( 59 );
+    goo_41.push( '강동구' );
+
+  
+    price_41.push( 28100 );
+    price_ch_41.push( 8 );
+    goo_41.push( '중구' );
+
+  
+    price_41.push( 18300 );
+    price_ch_41.push( 2 );
+    goo_41.push( '동구' );
+
+  
+    price_41.push( 23000 );
+    price_ch_41.push( 21 );
+    goo_41.push( '미추홀구' );
+
+  
+    price_41.push( 32950 );
+    price_ch_41.push( 21 );
+    goo_41.push( '연수구' );
+
+  
+    price_41.push( 28700 );
+    price_ch_41.push( 25 );
+    goo_41.push( '남동구' );
+
+  
+    price_41.push( 26900 );
+    price_ch_41.push( 16 );
+    goo_41.push( '부평구' );
+
+  
+    price_41.push( 19800 );
+    price_ch_41.push( 6 );
+    goo_41.push( '계양구' );
+
+  
+    price_41.push( 27900 );
+    price_ch_41.push( 13 );
+    goo_41.push( '서구' );
+
+  
+    price_41.push( 16300 );
+    price_ch_41.push( -4 );
+    goo_41.push( '강화군' );
+
+
+// var trace_11 = {
+//  x : price_11,
+//  y : price_ch_11,
+//  mode : 'markers',
+//  type : 'scatter',
+//  name : '서울특별시',
+//  text: goo_11,
+//  marker: {size: 11}
+// };
+
+// var trace_28 = {
+//  x : price_28,
+//  y : price_ch_28,
+//  mode : 'markers',
+//  type : 'scatter',
+//  name : '인천광역시',
+//  text: goo_28,
+//  marker: {size: 11}
+// };
+
+var trace_41 = {
+ x : price_41,
+ y : price_ch_41,
+ mode : 'markers',
+ type : 'scatter',
+ name : '경기도',
+ text: goo_41,
+ marker: {size: 11}
+};
+
+var data = [ trace_41 ];
+
+var layout = {
+  xaxis: {
+    title: "매매가격\n(만원)",
+    range: [ -1000, 180000 ]
+  },
+  yaxis: {
+    title: "가격 변동률\n(%)",
+    range: [-30, 110]
+  },
+  title:'Price vs. Price Change'
+    
+};
+
+Plotly.newPlot('myDiv', data, layout);
+
+</script>
+</body>
+</html>
+
+<div id="disqus_thread"></div>
+<script>
+  
+  /**
+  *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+  *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+  /*
+  var disqus_config = function () {
+  this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+  this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+  };
+  */
+  (function() { // DON'T EDIT BELOW THIS LINE
+  var d = document, s = d.createElement('script');
+  s.src = 'https://jirehbak.disqus.com/embed.js';
+  s.setAttribute('data-timestamp', +new Date());
+  (d.head || d.body).appendChild(s);
+  })();
+  </script>
+
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+:ET
