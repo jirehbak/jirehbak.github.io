@@ -29,10 +29,11 @@
         "bootstrap": "4.5.0",
         "font-awesome": "4.7.0",
         "jquery": "3.5.1",
+        "leaflet.icon.glyph": "^0.3.0",
         "startbootstrap-clean-blog": "5.0.9"
     },
     "devDependencies": {
-        "browser-sync": "2.26.7",
+        "browser-sync": "^2.26.13",
         "gulp": "4.0.2"
     }
 }

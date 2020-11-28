@@ -1,0 +1,249 @@
+I"7c<h3>
+  여행 개요<br />
+</h3>
+
+<ul>
+  <li>기간: 2020년 11월 (3박 4일)</li>
+  <li>지역: 제주시, 서귀포시</li>
+</ul>
+
+<html>
+<head>
+  <title>APT price</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ==" crossorigin="" />
+  <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js" integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew==" crossorigin=""></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.min.js"></script>
+  <style>
+    #mapid {width: 100%; height: 700px; }
+    .info { padding: 6px 8px; font: 14px/16px Arial, Helvetica, sans-serif; background: white; background: rgba(255,255,255,0.8); box-shadow: 0 0 15px rgba(0,0,0,0.2); border-radius: 5px; } .info h4 { margin: 0 0 5px; color: #777; }
+    .legend { text-align: left; line-height: 18px; color: #555; } .legend i { width: 18px; height: 18px; float: left; margin-right: 8px; opacity: 0.7; }
+  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+</head>
+<body>
+
+<h3>
+  <br />Trip to Jeju<br />
+</h3>
+
+  <div id="mapid"></div>
+  <br /><br />
+  
+  <script>
+
+  // initialize the map
+  var mymap = L.map('mapid').setView([33.35838975359897, 126.53239840940293], 10);
+  var jeju_trip = {
+"type": "FeatureCollection",
+"features": [
+{ "type": "Feature", "properties": { "Name": "공항 → 리젠트 마린 숙소 by 택시", "Cost": null, "Date": "2020-11-04", "Place_category": "숙소", "Place_name": "리젠트마린 호텔", "Tag": null, "Time": "20:30~21:00", "Trip_category": "이동", "link": "<a href=\"https:\/\/place.map.kakao.com\/27386976\">호텔리젠트마린<\/a>", "Day": 1, "Kakao_id": 27386976, "longitude": 126.526751942838, "latitude": 33.517419433739498, "address_name": "제주특별자치도 제주시 건입동 1443", "road_address_name": "제주특별자치도 제주시 서부두2길 20", "category_group_name": "숙박", "category_name": "여행 > 숙박 > 호텔", "kakao_place_name": "호텔리젠트마린" }, "geometry": { "type": "Point", "coordinates": [ 126.526751942838004, 33.517419433739498 ] } },
+{ "type": "Feature", "properties": { "Name": "저녁식사 @해녀할망국수, 맥도날드", "Cost": 13000.0, "Date": "2020-11-04", "Place_category": "식당", "Place_name": "해녀할망국수", "Tag": null, "Time": "21:00~22:00", "Trip_category": "식사", "link": "<a href=\"https:\/\/place.map.kakao.com\/1952281593\">해녀할망국수<\/a>", "Day": 1, "Kakao_id": 1952281593, "longitude": 126.52132909654101, "latitude": 33.517440070466897, "address_name": "제주특별자치도 제주시 삼도이동 1192-12", "road_address_name": "제주특별자치도 제주시 탑동로 31-1", "category_group_name": "음식점", "category_name": "음식점 > 한식 > 국수", "kakao_place_name": "해녀할망국수" }, "geometry": { "type": "Point", "coordinates": [ 126.52132909654101, 33.517440070466897 ] } },
+{ "type": "Feature", "properties": { "Name": "SK 렌트카 픽업 (아반떼)", "Cost": null, "Date": "2020-11-05", "Place_category": "렌트카", "Place_name": "SK렌트카 제주점", "Tag": null, "Time": "10:00~10:30", "Trip_category": "이동", "link": "<a href=\"https:\/\/place.map.kakao.com\/17940761\">SK렌터카 제주지점<\/a>", "Day": 2, "Kakao_id": 17940761, "longitude": 126.44976546887794, "latitude": 33.494049604838672, "address_name": "제주특별자치도 제주시 이호일동 1903-1", "road_address_name": "제주특별자치도 제주시 덕지2길 6", "category_group_name": null, "category_name": "서비스,산업 > 전문대행 > 렌터카 > SK렌터카", "kakao_place_name": "SK렌터카 제주지점" }, "geometry": { "type": "Point", "coordinates": [ 126.449765468877942, 33.494049604838672 ] } },
+{ "type": "Feature", "properties": { "Name": "협재 해수욕장", "Cost": 0.0, "Date": "2020-11-05", "Place_category": "관광지", "Place_name": "협재 해수욕장", "Tag": "사진", "Time": "11:20~12:00", "Trip_category": "관광", "link": "<a href=\"https:\/\/place.map.kakao.com\/8159415\">협재해수욕장<\/a>", "Day": 2, "Kakao_id": 8159415, "longitude": 126.23915753908501, "latitude": 33.393866077622107, "address_name": "제주특별자치도 제주시 한림읍 협재리 2447", "road_address_name": "제주특별자치도 제주시 한림읍 한림로 329-10", "category_group_name": "관광명소", "category_name": "여행 > 관광,명소 > 해수욕장,해변", "kakao_place_name": "협재해수욕장" }, "geometry": { "type": "Point", "coordinates": [ 126.239157539085014, 33.393866077622107 ] } },
+{ "type": "Feature", "properties": { "Name": "해물라면,문어라면 @쪼꼴락상회", "Cost": 23000.0, "Date": "2020-11-05", "Place_category": "식당", "Place_name": "쪼꼴락상회", "Tag": "사진", "Time": "12:00~13:00", "Trip_category": "식사", "link": "<a href =\"\"https:\/\/place.map.kakao.com\/427228244\">협재해물라면 쪼꼴락상회<\/a>", "Day": 2, "Kakao_id": 427228244, "longitude": 126.24151686376595, "latitude": 33.393730856912391, "address_name": "제주특별자치도 제주시 한림읍 협재리 1750", "road_address_name": "제주특별자치도 제주시 한림읍 협재4길 9", "category_group_name": "음식점", "category_name": "음식점 > 한식 > 해물,생선", "kakao_place_name": "협재해물라면 쪼꼴락상회" }, "geometry": { "type": "Point", "coordinates": [ 126.241516863765952, 33.393730856912391 ] } },
+{ "type": "Feature", "properties": { "Name": "서쪽가게", "Cost": 0.0, "Date": "2020-11-05", "Place_category": "상점", "Place_name": "서쪽가게", "Tag": "사진", "Time": "13:00~13:20", "Trip_category": "쇼핑", "link": "<a href =\"https:\/\/place.map.kakao.com\/1380804423\">서쪽가게<\/a>", "Day": 2, "Kakao_id": 1380804423, "longitude": 126.24062374503799, "latitude": 33.393353940392103, "address_name": "제주특별자치도 제주시 한림읍 협재리 1751-6", "road_address_name": "제주특별자치도 제주시 한림읍 한림로 336", "category_group_name": null, "category_name": "가정,생활 > 생활용품점 > 인테리어장식판매", "kakao_place_name": "서쪽가게" }, "geometry": { "type": "Point", "coordinates": [ 126.240623745037993, 33.393353940392103 ] } },
+{ "type": "Feature", "properties": { "Name": "그루브 카페", "Cost": null, "Date": "2020-11-05", "Place_category": "카페", "Place_name": "그루브카페", "Tag": "사진", "Time": "13:20~14:00", "Trip_category": "식사", "link": "<a href =\"https:\/\/place.map.kakao.com\/1254546154\">그루브<\/a>", "Day": 2, "Kakao_id": 1254546154, "longitude": 126.24001204441605, "latitude": 33.393739681892079, "address_name": "제주특별자치도 제주시 한림읍 협재리 2447-21", "road_address_name": "제주특별자치도 제주시 한림읍 한림로 333", "category_group_name": "카페", "category_name": "음식점 > 카페", "kakao_place_name": "그루브" }, "geometry": { "type": "Point", "coordinates": [ 126.240012044416048, 33.393739681892079 ] } },
+{ "type": "Feature", "properties": { "Name": "지질트레일 트래킹", "Cost": 0.0, "Date": "2020-11-05", "Place_category": "관광지", "Place_name": "수월봉 지질트레일", "Tag": "사진", "Time": "14:30~15:30", "Trip_category": "관광", "link": "<a href =\"https:\/\/place.map.kakao.com\/416160023\">수월봉지질트레일<\/a>", "Day": 2, "Kakao_id": 416160023, "longitude": 126.16333152647226, "latitude": 33.294808211167961, "address_name": "제주특별자치도 제주시 한경면 고산리 3760", "road_address_name": null, "category_group_name": "관광명소", "category_name": "여행 > 관광,명소 > 도보여행", "kakao_place_name": "수월봉지질트레일" }, "geometry": { "type": "Point", "coordinates": [ 126.163331526472263, 33.294808211167961 ] } },
+{ "type": "Feature", "properties": { "Name": "그랜드 섬오름 체크인", "Cost": null, "Date": "2020-11-05", "Place_category": "숙소", "Place_name": "그랜드 섬오름 호텔", "Tag": null, "Time": "16:00~17:00", "Trip_category": "휴식", "link": "<a href =\"https:\/\/place.map.kakao.com\/17017429\">더그랜드섬오름<\/a>", "Day": 2, "Kakao_id": 17017429, "longitude": 126.51042079683762, "latitude": 33.233072185400211, "address_name": "제주특별자치도 서귀포시 법환동 1513", "road_address_name": "제주특별자치도 서귀포시 막숙포로 114", "category_group_name": "숙박", "category_name": "여행 > 숙박 > 호텔", "kakao_place_name": "더그랜드섬오름" }, "geometry": { "type": "Point", "coordinates": [ 126.510420796837622, 33.233072185400211 ] } },
+{ "type": "Feature", "properties": { "Name": "올레시장(회, 흑돼지강정, 오메기떡)", "Cost": 40000.0, "Date": "2020-11-05", "Place_category": "상점", "Place_name": "올레시장", "Tag": null, "Time": "17:00~19:00", "Trip_category": "쇼핑", "link": "<a href =\"https:\/\/place.map.kakao.com\/7938166\">서귀포매일올레시장<\/a>", "Day": 2, "Kakao_id": 7938166, "longitude": 126.56384869150995, "latitude": 33.249915099584669, "address_name": "제주특별자치도 서귀포시 서귀동 340", "road_address_name": null, "category_group_name": null, "category_name": "가정,생활 > 시장", "kakao_place_name": "서귀포매일올레시장" }, "geometry": { "type": "Point", "coordinates": [ 126.563848691509946, 33.249915099584669 ] } },
+{ "type": "Feature", "properties": { "Name": "김밥 구입&식사 @엉클통김밥", "Cost": 12000.0, "Date": "2020-11-06", "Place_category": "식당", "Place_name": "서귀포 엉클통김밥", "Tag": null, "Time": "08:20~08:40", "Trip_category": "식사", "link": "<a href =\"https:\/\/place.map.kakao.com\/1897851453\">엉클통김밥 법환점<\/a>", "Day": 3, "Kakao_id": 1897851453, "longitude": 126.507334739165, "latitude": 33.249035960126498, "address_name": "제주특별자치도 서귀포시 강정동 231-2", "road_address_name": "제주특별자치도 서귀포시 월드컵로 8", "category_group_name": "음식점", "category_name": "음식점 > 분식", "kakao_place_name": "엉클통김밥 법환점" }, "geometry": { "type": "Point", "coordinates": [ 126.507334739165003, 33.249035960126498 ] } },
+{ "type": "Feature", "properties": { "Name": "엉클통 김밥 → 한라산 영실휴게소", "Cost": 1800.0, "Date": "2020-11-06", "Place_category": "관광지", "Place_name": "영실휴게소", "Tag": null, "Time": "08:40~09:30", "Trip_category": "이동", "link": "<a href =\"https:\/\/place.map.kakao.com\/18480608\">한라산영실휴게소<\/a>", "Day": 3, "Kakao_id": 18480608, "longitude": 126.496737206332, "latitude": 33.3484962862751, "address_name": "제주특별자치도 서귀포시 하원동 산 1-1", "road_address_name": "제주특별자치도 서귀포시 영실로 226", "category_group_name": null, "category_name": "교통,수송 > 휴게소", "kakao_place_name": "한라산영실휴게소" }, "geometry": { "type": "Point", "coordinates": [ 126.496737206332, 33.3484962862751 ] } },
+{ "type": "Feature", "properties": { "Name": "한라산 등반 (영실탐방로~윗세오름~남벽분기점)", "Cost": 0.0, "Date": "2020-11-06", "Place_category": "관광지", "Place_name": "한라산 남벽분기점", "Tag": "사진", "Time": "09:30~14:00", "Trip_category": "관광, 레저", "link": "<a href =\"https:\/\/place.map.kakao.com\/22019861\">한라산 남벽분기점<\/a>", "Day": 3, "Kakao_id": 22019861, "longitude": 126.534025499797, "latitude": 33.354552785115402, "address_name": "제주특별자치도 서귀포시 상효동", "road_address_name": null, "category_group_name": null, "category_name": "스포츠,레저 > 등산 > 등산정보", "kakao_place_name": "한라산 남벽분기점" }, "geometry": { "type": "Point", "coordinates": [ 126.534025499796996, 33.354552785115402 ] } },
+{ "type": "Feature", "properties": { "Name": "컵라면 @거린사슴전망대", "Cost": 5000.0, "Date": "2020-11-06", "Place_category": "관광지", "Place_name": "거린사슴전망대", "Tag": "사진", "Time": "14:00~14:30", "Trip_category": "관광, 식사", "link": "<a href =\"https:\/\/place.map.kakao.com\/13337646\">거린사슴 전망대<\/a>", "Day": 3, "Kakao_id": 13337646, "longitude": 126.45456323066099, "latitude": 33.307457102159198, "address_name": "제주특별자치도 서귀포시 대포동 산 2-11", "road_address_name": "제주특별자치도 서귀포시 1100로 823", "category_group_name": "관광명소", "category_name": "여행 > 관광,명소 > 전망대", "kakao_place_name": "거린사슴 전망대" }, "geometry": { "type": "Point", "coordinates": [ 126.454563230660995, 33.307457102159198 ] } },
+{ "type": "Feature", "properties": { "Name": "뿔소라정식 @뿔소라몽땅", "Cost": 34000.0, "Date": "2020-11-06", "Place_category": "식당", "Place_name": "뿔소라몽땅", "Tag": "사진", "Time": "16:30~18:30", "Trip_category": "식사", "link": "<a href =\"https:\/\/place.map.kakao.com\/244819144\">뿔소라몽땅<\/a>", "Day": 3, "Kakao_id": 244819144, "longitude": 126.50709307356371, "latitude": 33.233781249764995, "address_name": "제주특별자치도 서귀포시 법환동 1556", "road_address_name": "제주특별자치도 서귀포시 이어도로 866-27", "category_group_name": "음식점", "category_name": "음식점 > 한식", "kakao_place_name": "뿔소라몽땅" }, "geometry": { "type": "Point", "coordinates": [ 126.507093073563709, 33.233781249764995 ] } },
+{ "type": "Feature", "properties": { "Name": "브런치 @텐저린카페", "Cost": 41000.0, "Date": "2020-11-07", "Place_category": "카페", "Place_name": "텐저린카페", "Tag": "사진", "Time": "09:30~11:00", "Trip_category": "식사", "link": "<a href =\"https:\/\/place.map.kakao.com\/809248605\">텐저린카페<\/a>", "Day": 4, "Kakao_id": 809248605, "longitude": 126.50870672571999, "latitude": 33.236267114657103, "address_name": "제주특별자치도 서귀포시 법환동 1298-3", "road_address_name": "제주특별자치도 서귀포시 이어도로 880", "category_group_name": "카페", "category_name": "음식점 > 카페", "kakao_place_name": "텐저린카페" }, "geometry": { "type": "Point", "coordinates": [ 126.508706725719989, 33.236267114657103 ] } },
+{ "type": "Feature", "properties": { "Name": "테라로사 서귀포", "Cost": 20000.0, "Date": "2020-11-07", "Place_category": "카페", "Place_name": "테라로사 서귀포", "Tag": "사진", "Time": "12:00~13:00", "Trip_category": "관광, 쇼핑", "link": "<a href =\"https:\/\/place.map.kakao.com\/25161792\">테라로사 서귀포점<\/a>", "Day": 4, "Kakao_id": 25161792, "longitude": 126.61876434896601, "latitude": 33.249470731308698, "address_name": "제주특별자치도 서귀포시 하효동 1306-1", "road_address_name": "제주특별자치도 서귀포시 칠십리로658번길 27-16", "category_group_name": "카페", "category_name": "음식점 > 카페 > 커피전문점", "kakao_place_name": "테라로사 서귀포점" }, "geometry": { "type": "Point", "coordinates": [ 126.61876434896601, 33.249470731308698 ] } },
+{ "type": "Feature", "properties": { "Name": "북살롱이마고", "Cost": null, "Date": "2020-11-07", "Place_category": "카페", "Place_name": "북살롱이마고", "Tag": null, "Time": "13:00~15:30", "Trip_category": "관광, 쇼핑, 휴식", "link": "<a href =\"https:\/\/place.map.kakao.com\/1376491962\">북살롱이마고<\/a>", "Day": 4, "Kakao_id": 1376491962, "longitude": 126.795250974911, "latitude": 33.325050241707004, "address_name": "제주특별자치도 서귀포시 표선면 세화리 1807-7", "road_address_name": "제주특별자치도 서귀포시 표선면 세화강왓로 78", "category_group_name": "카페", "category_name": "음식점 > 카페 > 테마카페 > 북카페", "kakao_place_name": "북살롱이마고" }, "geometry": { "type": "Point", "coordinates": [ 126.795250974910999, 33.325050241707004 ] } },
+{ "type": "Feature", "properties": { "Name": "봉아오름", "Cost": null, "Date": "2020-11-07", "Place_category": "관광지", "Place_name": "봉아오름", "Tag": null, "Time": "15:30~17:00", "Trip_category": "관광", "link": "<a href =\"https:\/\/place.map.kakao.com\/11054575\">봉아오름<\/a>", "Day": 4, "Kakao_id": 11054575, "longitude": 126.592518841667, "latitude": 33.494283902520799, "address_name": "제주특별자치도 제주시 봉개동 1804", "road_address_name": null, "category_group_name": "관광명소", "category_name": "여행 > 관광,명소 > 오름", "kakao_place_name": "봉아오름" }, "geometry": { "type": "Point", "coordinates": [ 126.592518841667001, 33.494283902520799 ] } },
+{ "type": "Feature", "properties": { "Name": "오겹살 @zzz제주흑돼지", "Cost": null, "Date": "2020-11-07", "Place_category": "식당", "Place_name": "zzz제주흑돼지", "Tag": null, "Time": "17:00~18:00", "Trip_category": "식사", "link": "<a href =\"https:\/\/place.map.kakao.com\/1337571448\">ZZZ제주흑돼지<\/a>", "Day": 4, "Kakao_id": 1337571448, "longitude": 126.49621583189399, "latitude": 33.4880045363279, "address_name": "제주특별자치도 제주시 연동 302-3", "road_address_name": "제주특별자치도 제주시 신대로 104", "category_group_name": "음식점", "category_name": "음식점 > 한식 > 육류,고기", "kakao_place_name": "ZZZ제주흑돼지" }, "geometry": { "type": "Point", "coordinates": [ 126.496215831893991, 33.4880045363279 ] } }
+]
+}
+
+  var geojson;
+
+  var hotel_data = jeju_trip.features.filter(a => a.properties.Place_category == "숙소"),
+      eat_data = jeju_trip.features.filter(a => a.properties.Place_category == "식당"),
+      cafe_data = jeju_trip.features.filter(a => a.properties.Place_category == "카페"),
+      car_data = jeju_trip.features.filter(a => a.properties.Place_category == "렌트카"),
+      trip_data = jeju_trip.features.filter(a => a.properties.Place_category == "관광지"),
+      shop_data = jeju_trip.features.filter(a => a.properties.Place_category == "상점");
+
+  // Marker
+  function fontAwesomeMarker(feature, latlng) {
+    switch(feature.properties["Place_category"]) {
+        case "숙소":
+            var hotelIcon = L.AwesomeMarkers.icon({
+                                      icon: 'hotel',
+                                      markerColor: 'gray',
+                                      prefix: 'fa'
+                                    });
+            return L.marker(latlng, {icon: hotelIcon});
+
+        case "식당":
+            var eatIcon = L.AwesomeMarkers.icon({
+                                      icon: 'utensils',
+                                      markerColor: 'red',
+                                      prefix: 'fa'
+                                    });
+            return L.marker(latlng, {icon: eatIcon});
+        
+        case "카페":
+            var eatIcon = L.AwesomeMarkers.icon({
+                                      icon: 'coffee',
+                                      markerColor: 'orange',
+                                      prefix: 'fa'
+                                    });
+            return L.marker(latlng, {icon: eatIcon});
+        
+        case "렌트카":
+            var eatIcon = L.AwesomeMarkers.icon({
+                                      icon: 'car',
+                                      markerColor: 'black',
+                                      prefix: 'fa'
+                                    });
+            return L.marker(latlng, {icon: eatIcon});
+        
+        case "관광지":
+            var eatIcon = L.AwesomeMarkers.icon({
+                                      icon: 'hiking',
+                                      markerColor: 'green',
+                                      prefix: 'fa'
+                                    });
+            return L.marker(latlng, {icon: eatIcon});
+        
+        case "상점":
+            var eatIcon = L.AwesomeMarkers.icon({
+                                      icon: 'shopping-bag',
+                                      markerColor: 'blue',
+                                      prefix: 'fa'
+                                    });
+            return L.marker(latlng, {icon: eatIcon});
+        
+        }
+  };
+
+    // load a tile layer
+  var grayscale = L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
+                              attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+                              maxZoom: 18,
+                              id: 'mapbox/light-v9',
+                              tileSize: 512,
+                              zoomOffset: -1,
+                              accessToken: 'pk.eyJ1IjoiamlyZWhiYWsiLCJhIjoiY2thN29kam43MDFydDJzbnZjc215YXRwYiJ9.jpgsHugzt-5Duo__PUDdPA'
+                          }),
+      streets   = L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
+                              attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+                              maxZoom: 18,
+                              id: 'mapbox/streets-v11',
+                              tileSize: 512,
+                              zoomOffset: -1,
+                              accessToken: 'pk.eyJ1IjoiamlyZWhiYWsiLCJhIjoiY2thN29kam43MDFydDJzbnZjc215YXRwYiJ9.jpgsHugzt-5Duo__PUDdPA'
+                          }).addTo(mymap);
+
+  hotel_layer = L.geoJson(
+    hotel_data,
+    {
+      pointToLayer: fontAwesomeMarker
+    }
+  ).bindPopup(function (layer) {
+    return '<b>Day ' + layer.feature.properties.Day + '</br>' + layer.feature.properties.Place_category + ' - ' + layer.feature.properties.link
+  }).addTo(mymap);
+
+  eat_layer = L.geoJson(
+    eat_data,
+    {
+      pointToLayer: fontAwesomeMarker
+    }
+  ).bindPopup(function (layer) {
+    return '<b>Day ' + layer.feature.properties.Day + '</br>' + layer.feature.properties.Place_category + ' - ' + layer.feature.properties.link
+  }).addTo(mymap);
+  
+  cafe_layer = L.geoJson(
+    cafe_data,
+    {
+      pointToLayer: fontAwesomeMarker
+    }
+  ).bindPopup(function (layer) {
+    return '<b>Day ' + layer.feature.properties.Day + '</br>' + layer.feature.properties.Place_category + ' - ' + layer.feature.properties.link
+  }).addTo(mymap);
+  
+  car_layer = L.geoJson(
+    hotel_data,
+    {
+      pointToLayer: fontAwesomeMarker
+    }
+  ).bindPopup(function (layer) {
+    return '<b>Day ' + layer.feature.properties.Day + '</br>' + layer.feature.properties.Place_category + ' - ' + layer.feature.properties.link
+  }).addTo(mymap);
+  
+  trip_layer = L.geoJson(
+    trip_data,
+    {
+      pointToLayer: fontAwesomeMarker
+    }
+  ).bindPopup(function (layer) {
+    return '<b>Day ' + layer.feature.properties.Day + '</br>' + layer.feature.properties.Place_category + ' - ' + layer.feature.properties.link
+  }).addTo(mymap);
+
+  shop_layer = L.geoJson(
+    shop_data,
+    {
+      pointToLayer: fontAwesomeMarker
+    }
+  ).bindPopup(function (layer) {
+    return '<b>Day ' + layer.feature.properties.Day + '</br>' + layer.feature.properties.Place_category + ' - ' + layer.feature.properties.link
+  }).addTo(mymap);
+
+  var hotels = L.layerGroup([hotel_layer]),
+      eats = L.layerGroup([eat_layer]),
+      cafes = L.layerGroup([cafe_layer]),
+      cars = L.layerGroup([car_layer]),
+      trips = L.layerGroup([trip_layer]),
+      shops = L.layerGroup([shop_layer]);
+
+  var baseMaps = {
+    "Streets": streets,
+    "Grayscale": grayscale
+  };
+
+  var overlayMaps = {
+      "숙소" : hotels,
+      "식당" : eats,
+      "카페" : cafes,
+      "렌트카" : cars,
+      "관광지" : trips,
+      "상점" : shops
+  };
+
+  L.control.layers(baseMaps, overlayMaps).addTo(mymap);
+
+  </script>
+</body>
+</html>
+
+<div id="disqus_thread"></div>
+<script>
+  
+  /**
+  *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+  *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+  /*
+  var disqus_config = function () {
+  this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+  this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+  };
+  */
+  (function() { // DON'T EDIT BELOW THIS LINE
+  var d = document, s = d.createElement('script');
+  s.src = 'https://jirehbak.disqus.com/embed.js';
+  s.setAttribute('data-timestamp', +new Date());
+  (d.head || d.body).appendChild(s);
+  })();
+  </script>
+
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+:ET
